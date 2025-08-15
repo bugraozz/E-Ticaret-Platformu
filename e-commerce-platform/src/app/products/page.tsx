@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ProductsGrid } from "@/components/product/products-grid"
+import { ProductsGrid } from "@/components/product/product-grid"
 import { ProductFilters } from "@/components/product/product-filters"
 import type { Metadata } from "next"
 

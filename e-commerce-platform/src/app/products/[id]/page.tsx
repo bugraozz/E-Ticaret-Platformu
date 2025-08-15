@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       title: product.title,
       description: product.description,
       images: [product.image],
-      type: "product",
+      type: "website",
     },
   }
 }

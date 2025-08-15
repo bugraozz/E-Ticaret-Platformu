@@ -15,7 +15,7 @@ const categoryImages = {
 
 export function CategoriesSection() {
   const dispatch = useAppDispatch()
-  const { categories } = useAppSelector((state) => state.products)
+  const { categories } = useAppSelector((state) => (state as any).products)
 
   useEffect(() => {
     if (categories.length === 0) {
@@ -23,7 +23,7 @@ export function CategoriesSection() {
     }
   }, [dispatch, categories.length])
 
-  const displayCategories = categories.filter((cat) => cat !== "all")
+  const displayCategories = categories.filter((cat: string) => cat !== "all")
 
   return (
     <section className="py-16 bg-muted/30">
@@ -34,7 +34,7 @@ export function CategoriesSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayCategories.map((category) => (
+          {displayCategories.map((category: string) => (
             <Link key={category} href={`/products?category=${encodeURIComponent(category)}`}>
               <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-0">

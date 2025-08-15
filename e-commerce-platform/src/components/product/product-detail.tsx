@@ -9,7 +9,7 @@ import { Star, ShoppingCart, Heart, Share2, Minus, Plus } from "lucide-react"
 import { useAppDispatch } from "@/lib/hooks"
 import { addToCart } from "@/lib/features/cart/cartSlice"
 import type { Product } from "@/lib/features/products/productsSlice"
-import { toast } from "@/hooks/use-toast"
+// import { toast } from "@/hooks/use-toast"
 
 interface ProductDetailProps {
   product: Product
@@ -31,10 +31,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         }),
       )
     }
-    toast({
-      title: "Added to Cart",
-      description: `${quantity}x ${product.title} added to your cart`,
-    })
+    alert(`${quantity}x ${product.title} added to your cart`)
   }
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1)

@@ -1,8 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, DM_Sans } from "next/font/google"
-import "./globals.css"
-import { Providers } from "./providers"
+import "../globals.css"
+import { Providers } from "../providers"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -40,15 +40,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode
+  params: { locale: string }
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+    <html lang={locale || "en"} className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+  <Providers>{children}</Providers>
       </body>
     </html>
   )

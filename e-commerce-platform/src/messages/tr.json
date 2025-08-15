@@ -1,0 +1,44 @@
+{
+  "header": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "categories": "Kategoriler",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "footer": {
+    "description": "Premium ürünler ve olağanüstü alışveriş deneyimi için güvenilir ortağınız.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "products": "Ürünler",
+    "categories": "Kategoriler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "customerService": "Müşteri Hizmetleri",
+    "help": "Yardım Merkezi",
+    "shipping": "Kargo Bilgileri",
+    "returns": "İadeler",
+    "faq": "SSS",
+    "legal": "Yasal",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "cookies": "Çerez Politikası",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "product": {
+    "addToCart": "Sepete Ekle",
+    "addedToCart": "Sepete Eklendi",
+    "addedToCartDescription": "sepetinize eklendi"
+  },
+  "filters": {
+    "filters": "Filtreler",
+    "sortBy": "Sırala",
+    "default": "Varsayılan",
+    "priceLowToHigh": "Fiyat: Düşükten Yükseğe",
+    "priceHighToLow": "Fiyat: Yüksekten Düşüğe",
+    "rating": "Değerlendirme",
+    "categories": "Kategoriler",
+    "allCategories": "Tüm Kategoriler",
+    "priceRange": "Fiyat Aralığı",
+    "clearFilters": "Filtreleri Temizle"
+  }
+}

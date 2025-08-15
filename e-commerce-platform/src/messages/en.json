@@ -1,0 +1,44 @@
+{
+  "header": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Your trusted partner for premium products and exceptional shopping experience.",
+    "quickLinks": "Quick Links",
+    "products": "Products",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "customerService": "Customer Service",
+    "help": "Help Center",
+    "shipping": "Shipping Info",
+    "returns": "Returns",
+    "faq": "FAQ",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "allRightsReserved": "All rights reserved."
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to Cart",
+    "addedToCartDescription": "has been added to your cart"
+  },
+  "filters": {
+    "filters": "Filters",
+    "sortBy": "Sort By",
+    "default": "Default",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "rating": "Rating",
+    "categories": "Categories",
+    "allCategories": "All Categories",
+    "priceRange": "Price Range",
+    "clearFilters": "Clear Filters"
+  }
+}
