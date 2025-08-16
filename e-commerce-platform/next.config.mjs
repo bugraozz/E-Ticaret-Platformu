@@ -22,6 +22,8 @@ const nextConfig = {
     // Enable image optimization for better performance
     unoptimized: false,
   },
+  // Vercel deployment configuration
+  trailingSlash: false,
   // Remove experimental.optimizePackageImports to avoid config warnings
 };
 
