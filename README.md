@@ -1,3 +1,8 @@
+
+Vercel link = https://e-commerce-platform-rose-kappa.vercel.app/en
+
+
+
 # ModernShop - E-Commerce Platform
 
 A modern, multilingual e-commerce platform built with Next.js 14, featuring internationalization, Redux state management, and a beautiful UI.
