@@ -1,6 +1,6 @@
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin('./next-intl.config.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,7 +11,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['fakestoreapi.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,12 +19,10 @@ const nextConfig = {
         pathname: '/img/**',
       },
     ],
-    unoptimized: true,
+    // Enable image optimization for better performance
+    unoptimized: false,
   },
-  experimental: {
-    // Explicitly disable to avoid vendor-chunks like './vendor-chunks/@reduxjs.js'
-    optimizePackageImports: false,
-  },
+  // Remove experimental.optimizePackageImports to avoid config warnings
 };
 
 export default withNextIntl(nextConfig);

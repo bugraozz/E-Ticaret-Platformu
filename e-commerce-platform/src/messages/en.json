@@ -61,6 +61,8 @@
     "viewAll": "View All Products"
   },
   "products": {
+    "title": "All Products",
+    "description": "Discover our complete collection of premium products",
     "pageTitle": "All Products",
     "pageSubtitle": "Discover our complete collection of premium products",
     "errorLoading": "Error loading products: {error}",
@@ -101,5 +103,9 @@
     "womensClothing": "Women's clothing",
     "jewelery": "Jewelery",
     "electronics": "Electronics"
+  },
+  "common": {
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist."
   }
 }

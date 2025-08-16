@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 // Fonts and globals are applied in the root layout
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://modern-ecommerce.vercel.app'),
   title: "Modern E-Commerce | Premium Shopping Experience",
   description:
     "Discover premium products with our modern e-commerce platform. Multi-language support, fast delivery, and exceptional customer service.",

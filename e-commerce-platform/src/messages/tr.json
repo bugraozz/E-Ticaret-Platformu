@@ -61,6 +61,8 @@
     "viewAll": "Tüm Ürünleri Gör"
   },
   "products": {
+    "title": "Tüm Ürünler",
+    "description": "Premium ürünlerimizin tamamını keşfedin",
     "pageTitle": "Tüm Ürünler",
     "pageSubtitle": "Premium ürünlerimizin tamamını keşfedin",
     "errorLoading": "Ürünler yüklenirken hata oluştu: {error}",
@@ -101,5 +103,9 @@
     "womensClothing": "Kadın giyim",
     "jewelery": "Mücevher",
     "electronics": "Elektronik"
+  },
+  "common": {
+    "notFoundTitle": "Sayfa bulunamadı",
+    "notFoundDescription": "Aradığınız sayfa mevcut değil."
   }
 }

@@ -2,6 +2,7 @@ import type React from "react";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { WebVitals } from "@/components/web-vitals";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         <Providers>{children}</Providers>
+        <WebVitals />
       </body>
     </html>
   );

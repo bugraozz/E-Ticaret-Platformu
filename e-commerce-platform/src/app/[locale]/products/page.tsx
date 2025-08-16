@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ProductsGrid } from "@/components/product/product-grid";
 import { ProductFilters } from "@/components/product/product-filters";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,12 +11,23 @@ export const metadata: Metadata = {
   keywords: "products, electronics, jewelry, clothing, shopping, e-commerce",
 };
 
-export default function ProductsPage() {
+// Enable ISR with revalidation every hour
+export const revalidate = 3600;
+
+interface ProductsPageProps {
+  params: { locale: string };
+}
+
+export default async function ProductsPage({ params: { locale } }: ProductsPageProps) {
+  // Set request locale for static generation
+  unstable_setRequestLocale(locale);
+  const t = await getTranslations('products');
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="font-heading text-3xl font-bold mb-2">All Products</h1>
-        <p className="text-muted-foreground">Discover our complete collection of premium products</p>
+        <h1 className="font-heading text-3xl font-bold mb-2">{t('title')}</h1>
+        <p className="text-muted-foreground">{t('description')}</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-1">
@@ -29,6 +41,10 @@ export default function ProductsPage() {
       </div>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "tr" }];
 }
 
 function ProductsGridSkeleton() {

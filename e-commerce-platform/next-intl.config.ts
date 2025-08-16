@@ -1,9 +1,15 @@
 import { getRequestConfig } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!locale) throw new Error('Missing locale');
+export default getRequestConfig(async ({ requestLocale }) => {
+  // Validate that the incoming locale parameter is valid
+  const locales = ['en', 'tr'];
+  const locale = await requestLocale;
+  
+  if (!locale || !locales.includes(locale)) notFound();
+
   return {
-    messages: (await import(`./src/messages/${locale}.json`)).default,
-    locale
+    locale,
+    messages: (await import(`./src/messages/${locale}.json`)).default
   };
 });

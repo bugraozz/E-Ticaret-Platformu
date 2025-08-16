@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, ShoppingCart, Heart, Share2, Minus, Plus } from "lucide-react"
 import { useAppDispatch } from "@/lib/hooks"
 import { addToCart } from "@/lib/features/cart/cartSlice"
+import { useTranslations } from "next-intl"
 import type { Product } from "@/lib/features/products/productsSlice"
 // import { toast } from "@/hooks/use-toast"
 
@@ -18,6 +19,8 @@ interface ProductDetailProps {
 export function ProductDetail({ product }: ProductDetailProps) {
   const dispatch = useAppDispatch()
   const [quantity, setQuantity] = useState(1)
+  const t = useTranslations("productDetail")
+  const tProduct = useTranslations("product")
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
@@ -31,7 +34,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         }),
       )
     }
-    alert(`${quantity}x ${product.title} added to your cart`)
+    alert(`${quantity}x ${product.title} ${tProduct("addedToCartDescription")}`)
   }
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1)
@@ -78,7 +81,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 ))}
               </div>
               <span className="text-sm text-muted-foreground">
-                {product.rating.rate} ({product.rating.count} reviews)
+                {product.rating.rate} ({t("reviews", {count: product.rating.count})})
               </span>
             </div>
 
@@ -86,14 +89,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-heading text-lg font-semibold">Description</h3>
+            <h3 className="font-heading text-lg font-semibold">{t("description")}</h3>
             <p className="text-muted-foreground leading-relaxed">{product.description}</p>
           </div>
 
           {/* Quantity and Add to Cart */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <span className="font-medium">Quantity:</span>
+              <span className="font-medium">{t("quantity")}</span>
               <div className="flex items-center border rounded-lg">
                 <Button variant="ghost" size="icon" onClick={decrementQuantity} className="h-10 w-10">
                   <Minus className="h-4 w-4" />
@@ -108,17 +111,17 @@ export function ProductDetail({ product }: ProductDetailProps) {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={handleAddToCart} size="lg" className="flex-1">
                 <ShoppingCart className="h-5 w-5 mr-2" />
-                Add to Cart
+                {tProduct("addToCart")}
               </Button>
 
               <Button variant="outline" size="lg">
                 <Heart className="h-5 w-5 mr-2" />
-                Wishlist
+                {t("wishlist")}
               </Button>
 
               <Button variant="outline" size="lg">
                 <Share2 className="h-5 w-5 mr-2" />
-                Share
+                {t("share")}
               </Button>
             </div>
           </div>
@@ -128,19 +131,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
             <CardContent className="p-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Free Shipping</span>
+                  <span className="text-muted-foreground">{t("features.freeShipping")}</span>
                   <span className="font-medium">✓</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">30-Day Returns</span>
+                  <span className="text-muted-foreground">{t("features.returns")}</span>
                   <span className="font-medium">✓</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Warranty</span>
-                  <span className="font-medium">1 Year</span>
+                  <span className="text-muted-foreground">{t("features.warranty")}</span>
+                  <span className="font-medium">{t("features.warrantyValue")}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">In Stock</span>
+                  <span className="text-muted-foreground">{t("features.inStock")}</span>
                   <span className="font-medium text-green-600">✓</span>
                 </div>
               </div>

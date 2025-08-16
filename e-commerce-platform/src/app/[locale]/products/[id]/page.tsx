@@ -1,10 +1,12 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ProductDetail } from "@/components/product/product-detail";
+import { unstable_setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
 interface ProductPageProps {
   params: {
+    locale: string;
     id: string;
   };
 }
@@ -32,6 +34,9 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  // Set request locale for static generation
+  unstable_setRequestLocale(params.locale);
+  
   const product = await getProduct(params.id);
   if (!product) notFound();
   return (
@@ -66,7 +71,18 @@ export async function generateStaticParams() {
   try {
     const res = await fetch("https://fakestoreapi.com/products");
     const products = await res.json();
-    return products.slice(0, 10).map((p: any) => ({ id: p.id.toString() }));
+    const locales = ['en', 'tr'];
+    
+    const params = [];
+    for (const locale of locales) {
+      for (const product of products.slice(0, 10)) {
+        params.push({
+          locale,
+          id: product.id.toString()
+        });
+      }
+    }
+    return params;
   } catch {
     return [];
   }

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { useLocale } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ProductCard } from "@/components/product/product-card"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
@@ -12,6 +12,7 @@ import { ArrowRight } from "lucide-react"
 export function FeaturedProducts() {
   const dispatch = useAppDispatch()
   const { products, loading } = useAppSelector((state) => state.products)
+  const t = useTranslations("home")
   const locale = useLocale()
 
   useEffect(() => {
@@ -27,8 +28,8 @@ export function FeaturedProducts() {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl font-bold mb-4">Featured Products</h2>
-            <p className="text-muted-foreground">Discover our most popular items</p>
+            <h2 className="font-heading text-3xl font-bold mb-4">{t("featuredTitle")}</h2>
+            <p className="text-muted-foreground">{t("featuredSubtitle")}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[...Array(4)].map((_, i) => (
@@ -50,8 +51,8 @@ export function FeaturedProducts() {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl font-bold mb-4">Featured Products</h2>
-          <p className="text-muted-foreground">Discover our most popular items</p>
+          <h2 className="font-heading text-3xl font-bold mb-4">{t("featuredTitle")}</h2>
+          <p className="text-muted-foreground">{t("featuredSubtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -63,7 +64,7 @@ export function FeaturedProducts() {
         <div className="text-center">
           <Link href={`/${locale}/products`}>
             <Button variant="outline" size="lg">
-              View All Products
+              {t("viewAll")}
               <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
           </Link>
