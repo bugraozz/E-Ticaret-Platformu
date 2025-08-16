@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CartItem } from "./cart-item"
@@ -9,6 +10,7 @@ import { ShoppingBag, ArrowLeft } from "lucide-react"
 
 export function CartContent() {
   const { items, total, itemCount } = useAppSelector((state) => state.cart)
+  const locale = useLocale()
 
   if (items.length === 0) {
     return (
@@ -16,7 +18,7 @@ export function CartContent() {
         <ShoppingBag className="h-24 w-24 mx-auto text-muted-foreground mb-4" />
         <h2 className="font-heading text-2xl font-bold mb-2">Your cart is empty</h2>
         <p className="text-muted-foreground mb-8">Looks like you haven't added any items to your cart yet.</p>
-        <Link href="/products">
+  <Link href={`/${locale}/products`}>
           <Button size="lg">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Continue Shopping
@@ -71,7 +73,7 @@ export function CartContent() {
               Proceed to Checkout
             </Button>
 
-            <Link href="/products">
+            <Link href={`/${locale}/products`}>
               <Button variant="outline" className="w-full bg-transparent">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Continue Shopping

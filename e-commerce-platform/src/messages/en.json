@@ -4,7 +4,8 @@
     "products": "Products",
     "categories": "Categories",
     "about": "About",
-    "contact": "Contact"
+  "contact": "Contact",
+  "language": "Language"
   },
   "footer": {
     "description": "Your trusted partner for premium products and exceptional shopping experience.",
@@ -40,5 +41,65 @@
     "allCategories": "All Categories",
     "priceRange": "Price Range",
     "clearFilters": "Clear Filters"
+  },
+  "home": {
+    "heroTitle1": "Premium Shopping",
+    "heroTitle2": "Experience",
+    "heroDescription": "Discover curated products from top brands with fast delivery, exceptional customer service, and unbeatable prices.",
+    "shopNow": "Shop Now",
+    "browseCategories": "Browse Categories",
+    "statsProductsCount": "1000+",
+    "statsProductsLabel": "Premium Products",
+    "statsSupportCount": "24/7",
+    "statsSupportLabel": "Customer Support",
+    "statsDeliveryCount": "Free",
+    "statsDeliveryLabel": "Fast Delivery",
+    "shopByCategory": "Shop by Category",
+    "shopByCategorySubtitle": "Find exactly what you're looking for",
+    "featuredTitle": "Featured Products",
+    "featuredSubtitle": "Discover our most popular items",
+    "viewAll": "View All Products"
+  },
+  "products": {
+    "pageTitle": "All Products",
+    "pageSubtitle": "Discover our complete collection of premium products",
+    "errorLoading": "Error loading products: {error}",
+    "noResults": "No products found matching your criteria.",
+    "showingCount": "Showing {count} products"
+  },
+  "cart": {
+    "pageTitle": "Shopping Cart",
+    "pageSubtitle": "Review your items and proceed to checkout",
+    "emptyTitle": "Your cart is empty",
+    "emptySubtitle": "Looks like you haven't added any items to your cart yet.",
+    "continueShopping": "Continue Shopping",
+    "cartItems": "Cart Items ({count})",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal ({count} items)",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "tax": "Tax",
+    "total": "Total",
+    "checkout": "Proceed to Checkout"
+  },
+  "productDetail": {
+    "reviews": "{count} reviews",
+    "description": "Description",
+    "quantity": "Quantity:",
+    "wishlist": "Wishlist",
+    "share": "Share",
+    "features": {
+      "freeShipping": "Free Shipping",
+      "returns": "30-Day Returns",
+      "warranty": "Warranty",
+      "warrantyValue": "1 Year",
+      "inStock": "In Stock"
+    }
+  },
+  "categories": {
+    "mensClothing": "Men's clothing",
+    "womensClothing": "Women's clothing",
+    "jewelery": "Jewelery",
+    "electronics": "Electronics"
   }
 }

@@ -23,7 +23,8 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    // Explicitly disable to avoid vendor-chunks like './vendor-chunks/@reduxjs.js'
+    optimizePackageImports: false,
   },
 };
 

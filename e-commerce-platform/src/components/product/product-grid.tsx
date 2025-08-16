@@ -1,18 +1,30 @@
 "use client"
 
 import { useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { ProductCard } from "./product-card"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
-import { fetchProducts, fetchCategories } from "@/lib/features/products/productsSlice"
+import { fetchProducts, fetchCategories, setSelectedCategory } from "@/lib/features/products/productsSlice"
 
 export function ProductsGrid() {
   const dispatch = useAppDispatch()
-  const { filteredProducts, loading, error } = useAppSelector((state) => state.products)
+  const { filteredProducts, loading, error, products, selectedCategory } = useAppSelector((state) => state.products)
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     dispatch(fetchProducts())
     dispatch(fetchCategories())
   }, [dispatch])
+
+  // Apply category from query string once products are available
+  useEffect(() => {
+    const qp = searchParams?.get("category")
+    if (!qp) return
+    // Avoid redundant dispatches; wait until products are loaded
+    if (products.length > 0 && qp !== selectedCategory) {
+      dispatch(setSelectedCategory(qp))
+    }
+  }, [dispatch, searchParams, products.length, selectedCategory])
 
   if (loading) {
     return (

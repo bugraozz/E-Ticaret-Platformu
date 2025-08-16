@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ProductCard } from "@/components/product/product-card"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
@@ -11,6 +12,7 @@ import { ArrowRight } from "lucide-react"
 export function FeaturedProducts() {
   const dispatch = useAppDispatch()
   const { products, loading } = useAppSelector((state) => state.products)
+  const locale = useLocale()
 
   useEffect(() => {
     if (products.length === 0) {
@@ -59,7 +61,7 @@ export function FeaturedProducts() {
         </div>
 
         <div className="text-center">
-          <Link href="/products">
+          <Link href={`/${locale}/products`}>
             <Button variant="outline" size="lg">
               View All Products
               <ArrowRight className="h-4 w-4 ml-2" />

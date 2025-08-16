@@ -11,7 +11,7 @@ import { Star, ShoppingCart } from "lucide-react"
 import { useAppDispatch } from "@/lib/hooks"
 import { addToCart } from "@/lib/features/cart/cartSlice"
 import type { Product } from "@/lib/features/products/productsSlice"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { toast } from "@/hooks/use-toast"
 
 interface ProductCardProps {
@@ -21,6 +21,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const dispatch = useAppDispatch()
   const t = useTranslations("product")
+  const locale = useLocale()
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -41,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <Link href={`/products/${product.id}`}>
+  <Link href={`/${locale}/products/${product.id}`}>
         <div className="aspect-square overflow-hidden bg-card">
           <Image
             src={product.image || "/placeholder.svg"}
@@ -60,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.category}
           </Badge>
 
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/${locale}/products/${product.id}`}>
             <h3 className="font-heading text-sm font-semibold line-clamp-2 hover:text-primary transition-colors">
               {product.title}
             </h3>

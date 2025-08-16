@@ -4,7 +4,8 @@
     "products": "Ürünler",
     "categories": "Kategoriler",
     "about": "Hakkımızda",
-    "contact": "İletişim"
+  "contact": "İletişim",
+  "language": "Dil"
   },
   "footer": {
     "description": "Premium ürünler ve olağanüstü alışveriş deneyimi için güvenilir ortağınız.",
@@ -40,5 +41,65 @@
     "allCategories": "Tüm Kategoriler",
     "priceRange": "Fiyat Aralığı",
     "clearFilters": "Filtreleri Temizle"
+  },
+  "home": {
+    "heroTitle1": "Premium Alışveriş",
+    "heroTitle2": "Deneyimi",
+    "heroDescription": "En iyi markalardan seçili ürünleri hızlı teslimat, üstün müşteri hizmeti ve rakipsiz fiyatlarla keşfedin.",
+    "shopNow": "Şimdi Satın Al",
+    "browseCategories": "Kategorilere Göz At",
+    "statsProductsCount": "1000+",
+    "statsProductsLabel": "Premium Ürün",
+    "statsSupportCount": "7/24",
+    "statsSupportLabel": "Müşteri Desteği",
+    "statsDeliveryCount": "Ücretsiz",
+    "statsDeliveryLabel": "Hızlı Teslimat",
+    "shopByCategory": "Kategoriye Göre Alışveriş",
+    "shopByCategorySubtitle": "Aradığınız ürünü hızla bulun",
+    "featuredTitle": "Öne Çıkan Ürünler",
+    "featuredSubtitle": "En popüler ürünlerimizi keşfedin",
+    "viewAll": "Tüm Ürünleri Gör"
+  },
+  "products": {
+    "pageTitle": "Tüm Ürünler",
+    "pageSubtitle": "Premium ürünlerimizin tamamını keşfedin",
+    "errorLoading": "Ürünler yüklenirken hata oluştu: {error}",
+    "noResults": "Kriterlerinize uygun ürün bulunamadı.",
+    "showingCount": "{count} ürün gösteriliyor"
+  },
+  "cart": {
+    "pageTitle": "Alışveriş Sepeti",
+    "pageSubtitle": "Ürünlerinizi gözden geçirin ve ödemeye devam edin",
+    "emptyTitle": "Sepetiniz boş",
+    "emptySubtitle": "Henüz sepetinize ürün eklememişsiniz.",
+    "continueShopping": "Alışverişe Devam Et",
+    "cartItems": "Sepet Öğeleri ({count})",
+    "orderSummary": "Sipariş Özeti",
+    "subtotal": "Ara Toplam ({count} ürün)",
+    "shipping": "Kargo",
+    "shippingFree": "Ücretsiz",
+    "tax": "Vergi",
+    "total": "Toplam",
+    "checkout": "Ödemeye Geç"
+  },
+  "productDetail": {
+    "reviews": "{count} değerlendirme",
+    "description": "Açıklama",
+    "quantity": "Adet:",
+    "wishlist": "Favorilere Ekle",
+    "share": "Paylaş",
+    "features": {
+      "freeShipping": "Ücretsiz Kargo",
+      "returns": "30 Gün İade",
+      "warranty": "Garanti",
+      "warrantyValue": "1 Yıl",
+      "inStock": "Stokta Var"
+    }
+  },
+  "categories": {
+    "mensClothing": "Erkek giyim",
+    "womensClothing": "Kadın giyim",
+    "jewelery": "Mücevher",
+    "electronics": "Elektronik"
   }
 }

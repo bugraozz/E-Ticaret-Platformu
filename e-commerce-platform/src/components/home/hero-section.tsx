@@ -1,8 +1,12 @@
+"use client"
+
 import Link from "next/link"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShoppingBag } from "lucide-react"
 
 export function HeroSection() {
+  const locale = useLocale()
   return (
     <section className="relative bg-gradient-to-br from-background via-card to-muted/30 py-20 lg:py-32">
       <div className="container mx-auto px-4">
@@ -19,14 +23,14 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/products">
+            <Link href={`/${locale}/products`}>
               <Button size="lg" className="text-lg px-8">
                 <ShoppingBag className="h-5 w-5 mr-2" />
                 Shop Now
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </Link>
-            <Link href="/categories">
+            <Link href={`/${locale}/products`}>
               <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
                 Browse Categories
               </Button>

@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Minus, Plus, Trash2 } from "lucide-react"
@@ -14,6 +15,7 @@ interface CartItemProps {
 
 export function CartItem({ item }: CartItemProps) {
   const dispatch = useAppDispatch()
+  const locale = useLocale()
 
   const handleQuantityChange = (newQuantity: number) => {
     if (newQuantity <= 0) {
@@ -32,7 +34,7 @@ export function CartItem({ item }: CartItemProps) {
       <CardContent className="p-6">
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Product Image */}
-          <Link href={`/products/${item.id}`} className="flex-shrink-0">
+          <Link href={`/${locale}/products/${item.id}`} className="flex-shrink-0">
             <div className="w-24 h-24 bg-card rounded-lg overflow-hidden">
               <Image
                 src={item.image || "/placeholder.svg"}
@@ -47,7 +49,7 @@ export function CartItem({ item }: CartItemProps) {
           {/* Product Info */}
           <div className="flex-1 space-y-2">
             <Link
-              href={`/products/${item.id}`}
+              href={`/${locale}/products/${item.id}`}
               className="font-medium hover:text-primary transition-colors line-clamp-2"
             >
               {item.title}
