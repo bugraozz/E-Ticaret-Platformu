@@ -5,7 +5,8 @@
     "categories": "Categories",
     "about": "About",
   "contact": "Contact",
-  "language": "Language"
+  "language": "Language",
+  "searchPlaceholder": "Search products..."
   },
   "footer": {
     "description": "Your trusted partner for premium products and exceptional shopping experience.",
@@ -107,5 +108,112 @@
   "common": {
     "notFoundTitle": "Page not found",
     "notFoundDescription": "The page you are looking for does not exist."
+  },
+  "about": {
+    "title": "About ModernShop",
+    "description": "We're passionate about bringing you the finest products from around the world, with a commitment to quality, sustainability, and exceptional customer service.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To revolutionize online shopping by curating exceptional products and delivering unparalleled customer experiences that exceed expectations every single time."
+    },
+    "vision": {
+      "title": "Our Vision", 
+      "description": "To become the world's most trusted e-commerce platform, where quality meets convenience and every purchase contributes to a better tomorrow."
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": {
+        "title": "Quality First",
+        "description": "We never compromise on quality"
+      },
+      "customer": {
+        "title": "Customer-Centric",
+        "description": "Your satisfaction is our priority"
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "Caring for our planet"
+      },
+      "innovation": {
+        "title": "Innovation", 
+        "description": "Always pushing boundaries"
+      }
+    },
+    "stats": {
+      "title": "Our Impact",
+      "customers": "Happy Customers",
+      "orders": "Orders Delivered",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have questions or need assistance? Our friendly customer support team is here to help you with any inquiries about our products or services.",
+    "support": {
+      "title": "Customer Support",
+      "phone": {
+        "label": "Phone Support",
+        "badge": "24/7 Available"
+      },
+      "email": {
+        "label": "Email Support", 
+        "badge": "Response within 2 hours"
+      },
+      "chat": {
+        "label": "Live Chat",
+        "description": "Chat with our support team",
+        "button": "Start Chat"
+      }
+    },
+    "office": {
+      "title": "Office Location",
+      "address": {
+        "title": "Headquarters"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "weekdays": "Mon - Fri: 9:00 AM - 6:00 PM EST",
+        "weekend": "Sat - Sun: 10:00 AM - 4:00 PM EST"
+      }
+    },
+    "form": {
+      "title": "Send us a Message",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name", 
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "subject": "Subject",
+      "subjectSelect": "Select a subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "order": "Order Support",
+        "technical": "Technical Issue",
+        "refund": "Refund Request"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you...",
+      "submit": "Send Message"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "shipping": {
+        "question": "What are your shipping options?",
+        "answer": "We offer free standard shipping on orders over $50, with express and overnight options available."
+      },
+      "returns": {
+        "question": "What is your return policy?",
+        "answer": "We accept returns within 30 days of purchase for a full refund, provided items are in original condition."
+      },
+      "payment": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards, PayPal, Apple Pay, and Google Pay for secure transactions."
+      },
+      "tracking": {
+        "question": "How can I track my order?",
+        "answer": "You'll receive a tracking number via email once your order ships, allowing you to monitor delivery progress."
+      }
+    }
   }
 }

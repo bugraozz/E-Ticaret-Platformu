@@ -22,6 +22,7 @@ interface ProductsState {
   selectedCategory: string
   priceRange: [number, number]
   sortBy: "price-asc" | "price-desc" | "rating" | "default"
+  searchQuery: string
 }
 
 const initialState: ProductsState = {
@@ -33,6 +34,7 @@ const initialState: ProductsState = {
   selectedCategory: "all",
   priceRange: [0, 1000],
   sortBy: "default",
+  searchQuery: "",
 }
 
 // Async thunks
@@ -76,6 +78,10 @@ const productsSlice = createSlice({
       state.sortBy = action.payload
       state.filteredProducts = filterAndSortProducts(state)
     },
+    setSearchQuery: (state, action: PayloadAction<string>) => {
+      state.searchQuery = action.payload
+      state.filteredProducts = filterAndSortProducts(state)
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -106,7 +112,11 @@ function filterAndSortProducts(state: ProductsState): Product[] {
   const filtered = state.products.filter((product) => {
     const categoryMatch = state.selectedCategory === "all" || product.category === state.selectedCategory
     const priceMatch = product.price >= state.priceRange[0] && product.price <= state.priceRange[1]
-    return categoryMatch && priceMatch
+    const searchMatch = state.searchQuery === "" || 
+      product.title.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(state.searchQuery.toLowerCase())
+    return categoryMatch && priceMatch && searchMatch
   })
 
   // Sort products
@@ -128,5 +138,5 @@ function filterAndSortProducts(state: ProductsState): Product[] {
   return filtered
 }
 
-export const { setSelectedCategory, setPriceRange, setSortBy } = productsSlice.actions
+export const { setSelectedCategory, setPriceRange, setSortBy, setSearchQuery } = productsSlice.actions
 export default productsSlice.reducer

@@ -18,7 +18,10 @@ export function Header() {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
   const langRef = useRef<HTMLDivElement | null>(null)
+  const searchRef = useRef<HTMLDivElement | null>(null)
 
   const switchLocale = (nextLocale: string) => {
     // Remove current locale prefix from the pathname and push with the new one
@@ -26,6 +29,15 @@ export function Header() {
     router.push(`/${nextLocale}${rest === "/" ? "" : rest}`)
     setIsOpen(false)
     setLangOpen(false)
+  }
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      router.push(`/${locale}/products?search=${encodeURIComponent(searchQuery.trim())}`)
+      setSearchOpen(false)
+      setSearchQuery("")
+    }
   }
 
   // Close language menu on outside click
@@ -38,10 +50,20 @@ export function Header() {
     return () => document.removeEventListener("mousedown", onDocClick)
   }, [])
 
+  // Close search on outside click
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (!searchRef.current) return
+      if (!searchRef.current.contains(e.target as Node)) setSearchOpen(false)
+    }
+    document.addEventListener("mousedown", onDocClick)
+    return () => document.removeEventListener("mousedown", onDocClick)
+  }, [])
+
   const navigation = [
     { name: t("home"), href: `/${locale}` },
     { name: t("products"), href: `/${locale}/products` },
-    { name: t("categories"), href: `/${locale}/categories` },
+    
     { name: t("about"), href: `/${locale}/about` },
     { name: t("contact"), href: `/${locale}/contact` },
   ]
@@ -74,9 +96,33 @@ export function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             {/* Search */}
-            <Button variant="ghost" size="icon" className="hidden sm:flex">
-              <Search className="h-5 w-5" />
-            </Button>
+            <div ref={searchRef} className="relative">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hidden sm:flex"
+                onClick={() => setSearchOpen(!searchOpen)}
+              >
+                <Search className="h-5 w-5" />
+              </Button>
+              {searchOpen && (
+                <div className="absolute right-0 mt-2 z-[10000] min-w-[20rem] rounded-md border bg-popover p-4 text-popover-foreground shadow-md">
+                  <form onSubmit={handleSearch} className="flex space-x-2">
+                    <input
+                      type="text"
+                      placeholder={t("searchPlaceholder", { default: "Search products..." })}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="flex-1 px-3 py-2 text-sm border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                      autoFocus
+                    />
+                    <Button type="submit" size="sm">
+                      <Search className="h-4 w-4" />
+                    </Button>
+                  </form>
+                </div>
+              )}
+            </div>
 
             {/* Language Switcher (custom popover) */}
             <div ref={langRef} className="relative">

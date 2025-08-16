@@ -5,7 +5,8 @@
     "categories": "Kategoriler",
     "about": "Hakkımızda",
   "contact": "İletişim",
-  "language": "Dil"
+  "language": "Dil",
+  "searchPlaceholder": "Ürün ara..."
   },
   "footer": {
     "description": "Premium ürünler ve olağanüstü alışveriş deneyimi için güvenilir ortağınız.",
@@ -107,5 +108,112 @@
   "common": {
     "notFoundTitle": "Sayfa bulunamadı",
     "notFoundDescription": "Aradığınız sayfa mevcut değil."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Dünyanın dört bir yanından en kaliteli ürünleri size sunma konusunda tutkuluyuz. Kalite, sürdürülebilirlik ve olağanüstü müşteri hizmetleri taahhüdümüzdür.",
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "Olağanüstü ürünler seçerek ve her seferinde beklentileri aşan benzersiz müşteri deneyimleri sunarak çevrimiçi alışverişi devrim yaratmak."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Kalitenin rahatlıkla buluştuğu ve her satın almanın daha iyi bir yarına katkıda bulunduğu, dünyanın en güvenilir e-ticaret platformu olmak."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "quality": {
+        "title": "Kalite Önceliği",
+        "description": "Kaliteden asla ödün vermeyiz"
+      },
+      "customer": {
+        "title": "Müşteri Odaklı",
+        "description": "Memnuniyetiniz önceliğimiz"
+      },
+      "sustainability": {
+        "title": "Sürdürülebilirlik",
+        "description": "Gezegenimizi korumak"
+      },
+      "innovation": {
+        "title": "İnovasyon",
+        "description": "Sınırları her zaman zorluyoruz"
+      }
+    },
+    "stats": {
+      "title": "Etkimiz",
+      "customers": "Mutlu Müşteri",
+      "orders": "Teslim Edilen Sipariş",
+      "satisfaction": "Memnuniyet Oranı"
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "description": "Sorularınız mı var veya yardıma mı ihtiyacınız var? Dostane müşteri destek ekibimiz ürünlerimiz veya hizmetlerimizle ilgili tüm sorularınızda size yardımcı olmak için burada.",
+    "support": {
+      "title": "Müşteri Desteği",
+      "phone": {
+        "label": "Telefon Desteği",
+        "badge": "7/24 Erişilebilir"
+      },
+      "email": {
+        "label": "E-posta Desteği",
+        "badge": "2 saat içinde yanıt"
+      },
+      "chat": {
+        "label": "Canlı Sohbet",
+        "description": "Destek ekibimizle sohbet edin",
+        "button": "Sohbeti Başlat"
+      }
+    },
+    "office": {
+      "title": "Ofis Konumu",
+      "address": {
+        "title": "Genel Merkez"
+      },
+      "hours": {
+        "title": "Çalışma Saatleri",
+        "weekdays": "Pzt - Cum: 09:00 - 18:00",
+        "weekend": "Cmt - Paz: 10:00 - 16:00"
+      }
+    },
+    "form": {
+      "title": "Bize Mesaj Gönderin",
+      "firstName": "Ad",
+      "firstNamePlaceholder": "Adınızı girin",
+      "lastName": "Soyad",
+      "lastNamePlaceholder": "Soyadınızı girin",
+      "email": "E-posta Adresi",
+      "emailPlaceholder": "E-posta adresinizi girin",
+      "subject": "Konu",
+      "subjectSelect": "Bir konu seçin",
+      "subjects": {
+        "general": "Genel Soru",
+        "order": "Sipariş Desteği",
+        "technical": "Teknik Sorun",
+        "refund": "İade Talebi"
+      },
+      "message": "Mesaj",
+      "messagePlaceholder": "Size nasıl yardımcı olabileceğimizi söyleyin...",
+      "submit": "Mesaj Gönder"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "shipping": {
+        "question": "Kargo seçenekleriniz nelerdir?",
+        "answer": "50$ üzeri siparişlerde ücretsiz standart kargo sunuyoruz, ekspres ve gece teslimat seçenekleri de mevcuttur."
+      },
+      "returns": {
+        "question": "İade politikanız nedir?",
+        "answer": "Ürünlerin orijinal durumda olması koşuluyla, satın alımdan sonraki 30 gün içinde tam iade kabul ediyoruz."
+      },
+      "payment": {
+        "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+        "answer": "Güvenli işlemler için tüm büyük kredi kartları, PayPal, Apple Pay ve Google Pay'i kabul ediyoruz."
+      },
+      "tracking": {
+        "question": "Siparişimi nasıl takip edebilirim?",
+        "answer": "Siparişiniz gönderildikten sonra e-posta ile takip numarası alacaksınız, bu sayede teslimat ilerlemesini izleyebilirsiniz."
+      }
+    }
   }
 }

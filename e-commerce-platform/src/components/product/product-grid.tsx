@@ -4,11 +4,11 @@ import { useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { ProductCard } from "./product-card"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
-import { fetchProducts, fetchCategories, setSelectedCategory } from "@/lib/features/products/productsSlice"
+import { fetchProducts, fetchCategories, setSelectedCategory, setSearchQuery } from "@/lib/features/products/productsSlice"
 
 export function ProductsGrid() {
   const dispatch = useAppDispatch()
-  const { filteredProducts, loading, error, products, selectedCategory } = useAppSelector((state) => state.products)
+  const { filteredProducts, loading, error, products, selectedCategory, searchQuery } = useAppSelector((state) => state.products)
   const searchParams = useSearchParams()
 
   useEffect(() => {
@@ -25,6 +25,14 @@ export function ProductsGrid() {
       dispatch(setSelectedCategory(qp))
     }
   }, [dispatch, searchParams, products.length, selectedCategory])
+
+  // Apply search query from URL
+  useEffect(() => {
+    const search = searchParams?.get("search")
+    if (search !== null && search !== searchQuery) {
+      dispatch(setSearchQuery(search))
+    }
+  }, [dispatch, searchParams, searchQuery])
 
   if (loading) {
     return (
